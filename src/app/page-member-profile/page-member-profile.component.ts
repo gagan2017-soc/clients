@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../service/authentication.Service'; 
+import { AuthenticationService } from '../service/authentication.service'; 
 
 import {MatTableDataSource} from '@angular/material/table';
 import { find, filter } from 'rxjs/operators';
