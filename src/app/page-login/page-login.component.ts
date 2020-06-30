@@ -4,7 +4,7 @@ import { ApiService } from '../service/api.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 
-import { AuthenticationService } from '../service/authentication.Service';
+import { AuthenticationService } from '../service/authentication.service';
 @Component({
   selector: 'app-page-login',
   templateUrl: './page-login.component.html',
