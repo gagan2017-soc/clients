@@ -1,0 +1,131 @@
+<h3>Transaction Registration</h3>
+<form [formGroup]="transactionForm"  (ngSubmit)="onFormSubmit()" >
+  <div class="form-group">
+    <label for="entrydt">Entry Date:</label>
+        <input type="date" formControlName="entrydt"  class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.entrydt.errors }" placeholder="Enter Transaction Date here"/>
+        
+        <div *ngIf="submitted && fval.entrydt.errors" class="invalid-feedback">
+            <div *ngIf="fval.entrydt.errors.required">Entry Date is required</div>
+        </div>
+  </div>
+
+  <div class="form-group">
+    <label for="narration">Narration</label>
+        <input type="text" formControlName="narration" class="form-control"  [ngClass]="{ 'is-invalid': submitted && fval.narration.errors }"  placeholder="Enter Narration  here"/>
+        <div *ngIf="submitted && fval.narration.errors" class="invalid-feedback">
+          <div *ngIf="fval.narration.errors.required">Narration is required</div>
+      </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="clearingdt">Clearing Date</label>
+    <input type="date" formControlName="clearingdt" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.clearingdt.errors }" placeholder="Enter Clearing Date here"/>
+    
+
+    <div *ngIf="submitted && fval.clearingdt.errors" class="invalid-feedback">
+        <div *ngIf="fval.clearingdt.errors.required">Clearing Date is required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type="number`" formControlName="amount" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.amount.errors }" placeholder="Enter Amount here"/>
+    
+    <div *ngIf="submitted && fval.amount.errors" class="invalid-feedback">
+        <div *ngIf="fval.amount.errors.required">Amount is required</div>
+    </div>
+  </div>
+
+   <!-- <div class="form-group">
+    <label for="mode">Mode</label>
+    <select [(ngModel)]="selectedOption" name="type" > 
+      <option style="display:none">
+      <option [value]="o.name" *ngFor="let o of options">
+         {{o.name}}
+      </option>
+  </select>
+  <div *ngIf="submitted && fval.mode.errors" class="invalid-feedback">
+    <div *ngIf="fval.mode.errors.required">Entry Date is required</div>
+</div>   
+  </div>  -->
+
+  <div class="form-group">
+    <label class="my-1 mr-2" for="mode">Mode</label>
+    <select class="custom-select my-1 mr-sm-2" class="form-control" formControlName="mode" id="mode">
+      <option selected>Choose...</option>
+      <option value="NEFT">NEFT</option>
+      <option value="IMPS">IMPS</option>
+      <option value="CHEQUE">CHEQUE</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="flatno">Flat Number</label>
+        <input type="text" formControlName="flatno" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.flatno.errors }"  placeholder="Enter Flat Number  here"/>
+        <div *ngIf="submitted && fval.flatno.errors" class="invalid-feedback">
+          <div *ngIf="fval.flatno.errors.required">Flat Number is required</div>
+      </div>  
+  </div>
+
+  <div class="form-group">
+    <label for="frommonth">From Month</label>
+        <input type="text" formControlName="frommonth" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.frommonth.errors }" placeholder="Enter From Month  here"/>
+        <div *ngIf="submitted && fval.frommonth.errors" class="invalid-feedback">
+          <div *ngIf="fval.frommonth.errors.required">From Month is required</div>
+      </div>  
+  </div>
+
+  <div class="form-group">
+    <label for="fromyear">From Year</label>
+        <input type="number" formControlName="fromyear" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.fromyear.errors }" placeholder="Enter From year  here"/>
+        <div *ngIf="submitted && fval.fromyear.errors" class="invalid-feedback">
+          <div *ngIf="fval.fromyear.errors.required">From Year is required</div>
+      </div>  
+
+  </div>
+  <div class="form-group">
+    <label for="tomonth">To Month</label>
+        <input type="text" formControlName="tomonth" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.tomonth.errors }" placeholder="Enter To Month  here"/>
+        <div *ngIf="submitted && fval.tomonth.errors" class="invalid-feedback">
+          <div *ngIf="fval.tomonth.errors.required">To Month is required</div>
+      </div>  
+
+  </div>
+  
+  <div class="form-group">
+    <label for="toyear">To Year</label>
+        <input type="number" formControlName="toyear" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.entrydate.errors }" placeholder="Enter To year  here"/>
+        <div *ngIf="submitted && fval.toyear.errors" class="invalid-feedback">
+          <div *ngIf="fval.toyear.errors.required">To Year is required</div>
+      </div>  
+    
+  </div>
+
+   <div class="form-group">
+    <label for="receiptgen">Receipt Generated</label>
+        <input type="text" formControlName="receiptgen" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.receiptgen.errors }" placeholder="Enter Receipt Generated  here"/>
+        <div *ngIf="submitted && fval.receiptgen.errors" class="invalid-feedback">
+          <div *ngIf="fval.receiptgen.errors.required">Receipt Generated is required</div>
+      </div>  
+
+  </div>
+  
+  <div class="form-group">
+    <label for="receiptnumber">Receipt Number</label>
+        <input type="number" formControlName="receiptnumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.receiptnumber.errors }" placeholder="Enter Receipt Number  here"/>
+        <div *ngIf="submitted && fval.receiptnumber.errors" class="invalid-feedback">
+          <div *ngIf="fval.receiptnumber.errors.required">Receipt Number is required</div>
+      </div>  
+
+  </div>   
+   
+
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Create Transaction
+    </button>
+    <!-- <a routerLink="/login-page" class="btn btn-link">Login to continue</a> -->
+</div>
+
+form>

@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Maintaince Payment</li>
+    </ol>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Society Maintenance at Gagan Garima Society</h1>
+      <p class="lead">A well-maintained property will last longer, and will have a better rental and resale value. So, please pay your property maintenance charges regularly</p>
+    </div>
+  </div>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="flattype">
+      <mat-header-cell *matHeaderCellDef> Flat Type:</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.flattype}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="basemain">
+      <mat-header-cell *matHeaderCellDef> Maintaince Charges(Base) </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.basemain}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="nonocc">
+      <mat-header-cell *matHeaderCellDef> Non-Occupnacy Charges </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.nonocc}} </mat-cell>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="total">
+      <mat-header-cell *matHeaderCellDef> Total Amount </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.total}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>

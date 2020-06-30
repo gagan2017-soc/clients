@@ -1,0 +1,15 @@
+.mat-tab-group {
+  flex-direction: row !important;
+}
+
+.mat-tab-labels {
+  flex-direction: column !important;
+}
+
+.mat-tab-label-active {
+  border-right: 2px solid primary-color !important;
+}
+
+.mat-ink-bar {
+  display: none;
+}

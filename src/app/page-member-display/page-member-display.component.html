@@ -1,0 +1,24 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Member  Panel</li>
+  </ol>
+</nav>
+<div  class="form-group">
+<div class="row">
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action " (click)="action('dashboard')" role="tab" aria-controls="DashBoard">DashBoard</a>
+      <a class="list-group-item list-group-item-action"  (click)="action('profile')" role="tab" aria-controls="Profile">Member View</a>
+      <a class="list-group-item list-group-item-action"  (click)="action('viewtrans')" role="tab" aria-controls="View Transcation">Maintiance Views</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div *ngIf="dashboard" id="dashboard" role="tabpanel" aria-labelledby="list-home-list">DashBoard</div>
+      <div *ngIf="profile" id="profile" role="tabpanel" aria-labelledby="list-profile-list"><app-page-member-profile></app-page-member-profile>></div>
+      <div *ngIf="viewtrans"  id="viewtrans" role="tabpanel" aria-labelledby="list-viewtrans-lst"><app-page-member-viewtrans></app-page-member-viewtrans></div>
+      
+    </div>
+  </div>
+</div>
+</div>

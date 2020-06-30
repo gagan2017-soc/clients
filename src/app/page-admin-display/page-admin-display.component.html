@@ -1,0 +1,27 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item active" aria-current="page">Admin Panel+ currentUser</li>
+    <a *ngIf="currentUser" class="nav-item nav-link" style="cursor:pointer" (click)="logout()">Logout</a>
+  </ol>
+</nav>
+<div  class="form-group">
+<div class="row">
+  <div class="col-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action " (click)="action('dashboard')" role="tab" aria-controls="DashBoard">DashBoard</a>
+      <a class="list-group-item list-group-item-action"  (click)="action('member')" role="tab" aria-controls="Member List">Member View</a>
+      <a class="list-group-item list-group-item-action"  (click)="action('mainview')" role="tab" aria-controls="Flat Owners">Maintiance Views</a>
+      <a class="list-group-item list-group-item-action"  (click)="action('addmain')" role="tab" aria-controls="Maintance charges">Add Maintance Entry</a>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+      <div *ngIf="dashboard" id="dashboard" role="tabpanel" aria-labelledby="list-home-list"><app-page-admin-dash></app-page-admin-dash></div>
+      <div *ngIf="member" id="member" role="tabpanel" aria-labelledby="list-profile-list"><app-page-admin-member></app-page-admin-member>></div>
+      <div *ngIf="mainview"  id="mainview" role="tabpanel" aria-labelledby="list-messages-lst"><app-page-admin-mainview></app-page-admin-mainview>></div>
+      <div *ngIf="addmain"  id="addmain" role="tabpanel" aria-labelledby="list-settings-list"><app-page-trans-entry></app-page-trans-entry>></div>
+    </div>
+  </div>
+</div>
+</div>

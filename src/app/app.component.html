@@ -1,0 +1,63 @@
+<!-- <app-main-toolbar></app-main-toolbar>
+<app-main-casrouel></app-main-casrouel>
+<app-main-about></app-main-about>
+<app-main-card-group></app-main-card-group>
+<app-main-footer></app-main-footer>
+<!-- <app-main-card></app-main-card> --> -->
+<mat-toolbar  color="primary"  class="fixed-header">
+    <mat-toolbar-row>
+    <span><img  src="./assets/logo.png"  style="width:50px;"></span>
+    <span>Gagan Garima Society</span>
+    <span class = "filler"></span>
+    <span class="spacer"></span>
+     <button mat-button routerLink="/home-page">Home</button>
+     <button mat-button [matMenuTriggerFor]="Resident">Residents</button>
+       <mat-menu #Resident="matMenu">
+        <button mat-menu-item routerLink="/login-page" > Member Login</button>
+         <button mat-menu-item routerLink="/gen-guide-page" > General Guide Lines</button>
+         <button mat-menu-item routerLink="/faq-page">FAQ's</button>
+         <button mat-menu-item routerLink="/man-pay-page">Maintaince Payment</button>
+         <button mat-menu-item routerLink="/fes-cal-page">Festival Calendars</button>
+         <button mat-menu-item routerLink="/ren-house-page">Renting House</button>
+         <button mat-menu-item routerLink="/amenties-page">Amenties</button>
+         <button mat-menu-item routerLink="/news-page">News</button>
+       </mat-menu>
+       <button mat-button [matMenuTriggerFor]="gallery">Gallery</button>
+       <mat-menu #gallery="matMenu">
+        <button mat-menu-item routerLink="/gan-gallery-page">Ganapati Celebration</button>
+        <button mat-menu-item routerLink="/oth-gallery-page">Other Celebration</button>
+      </mat-menu>
+       <button mat-button [matMenuTriggerFor]="manage">Management</button>
+       <mat-menu #manage="matMenu">
+        <button mat-menu-item routerLink="/man-committe-page">Management  Committe</button>
+        <button mat-menu-item routerLink="/supp-staff-page">Support Staff</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="project">Project</button>
+      <mat-menu #project="matMenu">
+        <button mat-menu-item routerLink="/man-committe-page"> Our Efforts</button>
+        <button mat-menu-item routerLink="/man-committe-page">Energy Efficiency</button>
+        <button mat-menu-item routerLink="/man-committe-page">Go Green</button>
+        <button mat-menu-item routerLink="/man-committe-page">Water Conservation</button>
+        <button mat-menu-item routerLink="/man-committe-page">Happy Street</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="around">Around Us</button>
+      <mat-menu #around="matMenu">
+        <button mat-menu-item  routerLink="/man-committe-page">Emergency Number</button>
+        <button mat-menu-item  routerLink="/man-committe-page">Hospital</button>
+        <button mat-menu-item  routerLink="/man-committe-page">Bank</button>
+        <button mat-menu-item  routerLink="/man-committe-page">Doctor</button>
+        <button mat-menu-item  routerLink="/man-committe-page">School</button>
+        <button mat-menu-item  routerLink="/man-committe-page">General Info</button>
+        <button mat-menu-item  routerLink="/man-committe-page">Near by Socities</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="contact">Contact Us</button>
+      <mat-menu #contact="matMenu">
+        <button mat-menu-item routerLink="/card-list">About Us</button>
+        <button mat-menu-item routerLink="/card-list">Tender</button>
+      </mat-menu>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <main>
+    <router-outlet  style="margin-top: 80px;"></router-outlet>
+    </main>
+    <app-main-footer></app-main-footer>

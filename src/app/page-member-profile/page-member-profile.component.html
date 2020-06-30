@@ -1,0 +1,34 @@
+<!-- <div class="container">
+   No data message 
+  <p *ngIf="UserData.length <= 0" class="no-data text-center">There is no employee added yet!</p>
+
+   Employee list --> 
+
+   <p-table [value]="UserData" autoLayout ="true" >
+    <ng-template pTemplate="header" >
+        <tr>
+            <!-- <th>Member Id</th> -->
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Email</th>
+            <th> Phone Number</th>
+            <th> Flat Number</th>
+            <th> Wing Name</th>
+            <th> Status</th>
+            <th> Created Date</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user >
+        <tr *ngIf="user.email === filterValue">
+          <!-- <td>{{user._id}}</td> -->
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phoneno}}</td>
+          <td>{{user.flatno}}</td>
+          <td>{{user.wing}}</td>
+          <td>{{user.status}}</td>
+          <td>{{user.createdat}}</td>
+          </tr>
+    </ng-template>
+</p-table>

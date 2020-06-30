@@ -1,0 +1,67 @@
+<p-table [value]="TransData" dataKey="entrydt"  autoLayout= "true" editMode="row" >
+  
+<ng-template pTemplate="header" > 
+  <tr>
+      <th>Entry Date</th>
+      <th>Narration</th>
+      <!-- <th>Clearing Date </th> -->
+      <th>Amount </th>
+      <th>Mode </th>
+      <th>Flat Number </th>
+      <th>From Month </th>
+      <th>From Year </th>
+      <th>To Month </th>
+      <th>To Year </th>
+      <th>Receipt Generated </th>
+      <th>Receipt Number </th>
+      <th style="width:8em"></th>
+  </tr>
+</ng-template>
+<ng-template pTemplate="body" let-TransData let-editing="editing" let-ri="rowIndex">
+  <tr [pEditableRow]="TransData">
+    <td>
+      {{TransData.entrydt}}}
+  </td>
+    
+    <td pEditableColumn>
+      <p-cellEditor>
+          <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="TransData.narration">
+          </ng-template>
+          <ng-template pTemplate="output">
+              {{TransData.narration}}
+          </ng-template>
+      </p-cellEditor>
+    </td>
+  <!--  <td>{{TransData.narration}}</td>
+     <td>{{TransData.clearingdt}}</td> -->
+    <td>{{TransData.amount}}</td>
+    <td pEditableColumn>
+      <p-cellEditor>
+          <ng-template pTemplate="input">
+            <p-dropdown [options]="modes" [(ngModel)]="TransData.mode" [style]="{'width':'100%'}"></p-dropdown>
+          </ng-template>
+          <ng-template pTemplate="output">
+              {{TransData.mode}}
+          </ng-template>
+      </p-cellEditor>
+    </td>
+    <!-- <td>{{TransData.mode}}</td> -->
+    <td>{{TransData.flatno}}</td>
+    <td>{{TransData.frommonth}}</td>
+    <td>{{TransData.fromyear}}</td>
+    <td>{{TransData.tomonth}}</td>
+    <td>{{TransData.toyear}}</td>
+    <td>{{TransData.receiptgen}}</td>
+    <td>{{TransData.receiptnumber}}</td>
+
+    <td style="text-align:center">
+      <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil" class="ui-button-info" (click)="onRowEditInit(TransData)"> </button>
+      <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check" class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(TransData)"></button>
+      <button *ngIf="editing" pButton type="button" pCancelEditableRow icon="pi pi-times" class="ui-button-danger" (click)="onRowEditCancel(TransData, ri)"></button>
+  </td>
+    </tr>
+</ng-template>
+  
+</p-table>
+ 

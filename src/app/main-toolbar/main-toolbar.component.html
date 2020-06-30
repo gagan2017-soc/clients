@@ -1,0 +1,56 @@
+<mat-toolbar  color="primary"  class="fixed-header">
+    <mat-toolbar-row>
+    <span><img  src="./assets/logo.png"  style="width:50px;"></span>
+    <span>Gagan Garima Society</span>
+    <span class = "filler"></span>
+    <span class="spacer"></span>
+     <button mat-button [matMenuTriggerFor]="home">Home</button>
+    <mat-menu #home="matMenu">
+      <button mat-menu-item routerLink="/card-list">About Us</button>
+      <button mat-menu-item routerLink="/card-list">Contact Us</button>
+      <button mat-menu-item routerLink="/card-list">Tender</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="Resident">Residents</button>
+       <mat-menu #Resident="matMenu">
+         <button mat-menu-item > General Guide Lines</button>
+         <button mat-menu-item>FAQ's</button>
+         <button mat-menu-item>Maintaince Payment</button>
+         <button mat-menu-item>Festival Calendars</button>
+         <button mat-menu-item>Renting House</button>
+         <button mat-menu-item>Amenties</button>
+         <button mat-menu-item>New</button>
+       </mat-menu>
+       <button mat-button [matMenuTriggerFor]="gallery">Gallery</button>
+       <mat-menu #gallery="matMenu">
+        <button mat-menu-item>Ganapati Celebration</button>
+        <button mat-menu-item>Other Celebration</button>
+      </mat-menu>
+       <button mat-button [matMenuTriggerFor]="manage">Management</button>
+       <mat-menu #manage="matMenu">
+        <button mat-menu-item>Management  Committe</button>
+        <button mat-menu-item>Support Staff</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="project">Project</button>
+      <mat-menu #project="matMenu">
+        <button mat-menu-item>Our Efforts</button>
+        <button mat-menu-item>Energy Efficiency</button>
+        <button mat-menu-item>Go Green</button>
+        <button mat-menu-item>Water Conservation</button>
+        <button mat-menu-item>Happy Street</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="around">Around Us</button>
+      <mat-menu #around="matMenu">
+        <button mat-menu-item>Emergency Number</button>
+        <button mat-menu-item>Hospital</button>
+        <button mat-menu-item>Bank</button>
+        <button mat-menu-item>Doctor</button>
+        <button mat-menu-item>School</button>
+        <button mat-menu-item>General Info</button>
+        <button mat-menu-item>Near by Socities</button>
+      </mat-menu>
+      
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <main>
+    <router-outlet  style="margin-top: 80px;"></router-outlet>
+    </main>
