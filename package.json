@@ -48,6 +48,7 @@
     "tslib": "^1.10.0",
     "typescript": "~3.8.3",
      "cors": "^2.8.5",
+    "core-js": "^3.6.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
