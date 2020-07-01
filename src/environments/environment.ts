@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl :'https://ggnserver.herokuapp.com/'
+  apiBaseUrl :'https://ggnserver.herokuapp.com'
 };
 
 
