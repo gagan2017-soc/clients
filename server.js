@@ -6,6 +6,7 @@ const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/gaganclient'));
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.get('/*', function(req,res) {
     
