@@ -11,7 +11,7 @@ console.log('Node.js web server at port 5000 is running..')
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 
-};
+});
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
 console.log('Node.js web server at port 5000 is running..'+ process.env.PORT);
